@@ -1,0 +1,21 @@
+.container { display: grid; min-height: 100vh; place-items: center; padding: 32px 20px; background: #f3f7f9; }
+.card { width: min(100%, 900px); padding: 36px 40px 40px; border: 1px solid #dce8ee; border-radius: 20px; background: #fff; box-shadow: 0 20px 50px rgba(29, 73, 96, .1); }
+.brandRow { height: 54px; margin-bottom: 38px; }
+.brandRow img { display: block; max-width: 190px; max-height: 54px; height: 100%; object-fit: contain; object-position: left center; }
+.eyebrow { margin-bottom: 8px; color: var(--color-primary); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.card h1 { color: #15384d; font-size: clamp(1.65rem, 4vw, 2.1rem); letter-spacing: -.04em; }
+.description { margin: 10px 0 28px; color: #66808e; line-height: 1.5; }
+.options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.option { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 14px; width: 100%; min-height: 220px; padding: 20px; border: 1px solid #d5e2e9; border-radius: 14px; color: #24465a; background: #fff; cursor: pointer; text-align: left; transition: border-color .16s, background .16s, transform .16s, box-shadow .16s; }
+.option:hover { border-color: var(--color-primary); transform: translateY(-1px); }
+.selected { border-color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 7%, white); box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 18%, transparent); }
+.icon { display: grid; flex: 0 0 40px; width: 40px; height: 40px; place-items: center; border-radius: 10px; color: #fff; background: var(--color-primary); font-weight: 800; }
+.optionText { display: grid; gap: 4px; flex: 1; }
+.optionText strong { font-size: 1.08rem; }
+.optionText small { color: #708893; font-size: .84rem; line-height: 1.55; }
+.radio { width: 19px; height: 19px; border: 2px solid #b7cbd5; border-radius: 50%; }
+.selected .radio { border: 5px solid var(--color-primary); }
+.submit { width: 100%; min-height: 48px; margin-top: 24px; border: 0; border-radius: 9px; color: #fff; background: var(--color-primary); cursor: pointer; font-weight: 800; }
+.submit:disabled { color: #9aadb7; background: #e0e9ed; cursor: not-allowed; }
+@media (max-width: 680px) { .options { grid-template-columns: 1fr; } .option { min-height: 0; } }
+@media (max-width: 500px) { .card { padding: 28px 22px; } .brandRow { margin-bottom: 28px; } .optionText small { font-size: .78rem; } }

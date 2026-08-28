@@ -1,0 +1,137 @@
+.container {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 32px 20px;
+  background: linear-gradient(135deg, #eaf5fb 0%, #d7edf8 54%, #c4e4f4 100%);
+}
+
+.card {
+  width: min(100%, 440px);
+  padding: 42px 40px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 60px rgba(0, 71, 112, 0.14);
+}
+
+.logo {
+  display: block;
+  width: 178px;
+  height: auto;
+  margin: 0 auto 38px;
+}
+
+.intro {
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  color: #15384d;
+  font-size: clamp(1.7rem, 5vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.description {
+  margin: 12px auto 30px;
+  max-width: 31ch;
+  color: #647b89;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  color: #314e60;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #bfd0da;
+  border-radius: 10px;
+  outline: none;
+  color: #17384b;
+  background: #fff;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field input::placeholder {
+  color: #9aadb8;
+}
+
+.field input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(0, 105, 166, 0.13);
+}
+
+.field input[aria-invalid='true'] {
+  border-color: #c24141;
+}
+
+.error {
+  color: #aa3232;
+  font-size: 0.8rem;
+}
+
+.submit {
+  min-height: 50px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--color-primary);
+  cursor: pointer;
+  font-weight: 800;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.submit:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.submit:focus-visible {
+  outline: 3px solid rgba(0, 105, 166, 0.3);
+  outline-offset: 3px;
+}
+
+.footer {
+  margin-top: 30px;
+  color: #91a3ad;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .card {
+    padding: 32px 24px 24px;
+    border-radius: 18px;
+  }
+
+  .logo {
+    width: 150px;
+    margin-bottom: 30px;
+  }
+}
