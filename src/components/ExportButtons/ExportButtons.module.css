@@ -1,0 +1,14 @@
+.exportArea { position: relative; }
+.trigger { display: inline-flex; align-items: center; gap: 8px; padding: 9px 11px; border: 1px solid #cbdbe2; border-radius: 8px; color: #536d7b; background: #fff; cursor: pointer; font-size: .76rem; font-weight: 800; transition: border-color .16s, color .16s, box-shadow .16s; }
+.trigger:hover, .trigger:focus-visible { border-color: var(--color-primary); color: var(--color-primary); box-shadow: 0 5px 14px rgba(29,91,119,.1); outline: none; }
+.chevron { margin-left: 2px; transition: transform .16s ease; }
+.options { position: absolute; top: 100%; right: 0; z-index: 20; display: grid; min-width: 145px; padding: 6px; border: 1px solid #dce7ec; border-radius: 9px; background: #fff; box-shadow: 0 14px 28px rgba(23,56,75,.16); opacity: 0; pointer-events: none; transform: translateY(0); transition: opacity .16s ease, transform .16s ease; }
+.exportArea:hover .options, .exportArea:focus-within .options { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.exportArea:hover .chevron, .exportArea:focus-within .chevron { transform: rotate(180deg); }
+.options button { display: flex; align-items: center; gap: 9px; padding: 9px 10px; border: 0; border-radius: 6px; color: #536d7b; background: #fff; cursor: pointer; font-size: .76rem; font-weight: 800; text-align: left; }
+.options button:hover:not(:disabled) { color: var(--color-primary); background: #f5fafc; }
+.options button:disabled { cursor: not-allowed; opacity: .45; }
+.fileIcon { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 5px; }
+.fileIcon svg { display: block; }
+.excelIcon { color: #16845b; background: #e5f5ed; }
+.pdfIcon { color: #cb4d4d; background: #fbeaea; }

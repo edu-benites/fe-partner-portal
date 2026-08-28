@@ -1,0 +1,98 @@
+.appShell { min-height: 100vh; background: #f5f8fa; }
+.header { background: var(--color-primary); color: #fff; }
+.headerContent { display: flex; align-items: center; gap: 24px; width: min(100%, 1380px); min-height: 78px; margin: 0 auto; padding: 10px 28px; }
+.brand { display: flex; align-items: center; flex: 0 0 auto; width: 195px; height: 58px; }
+.brand img { display: block; max-width: 100%; max-height: 58px; object-fit: contain; object-position: left center; }
+.headerInfo { display: flex; align-items: center; gap: 12px; min-width: 0; margin-left: auto; }
+.partnerName { max-width: 280px; overflow: hidden; font-size: .88rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.profileBadge { padding: 5px 10px; border: 1px solid rgba(255,255,255,.4); border-radius: 99px; font-size: .72rem; font-weight: 700; }
+.notificationArea { position: relative; }
+.notificationButton { position: relative; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; color: #fff; background: transparent; cursor: pointer; }
+.notificationButton::after { position: absolute; top: calc(100% + 9px); left: 50%; z-index: 5; padding: 5px 8px; border-radius: 5px; color: #fff; background: #17384b; content: attr(data-tooltip); font-size: .7rem; opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(-3px); transition: opacity .16s, transform .16s; white-space: nowrap; }
+.notificationButton:hover::after, .notificationButton:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.bellIcon { font-size: 1.05rem; line-height: 1; filter: grayscale(1) brightness(0) invert(1); }
+.notificationCount { position: absolute; top: -4px; right: -4px; display: grid; width: 17px; height: 17px; place-items: center; border: 2px solid var(--color-primary); border-radius: 50%; color: #fff; background: #d14b4b; font-size: .58rem; font-weight: 800; }
+.profileArea { position: relative; }
+.profileArea::before { position: absolute; inset: -12px; z-index: 0; content: ''; }
+.profileButton { position: relative; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; color: #fff; background: rgba(255,255,255,.1); cursor: pointer; }
+.profileButton::after { position: absolute; top: calc(100% + 9px); left: 50%; z-index: 5; padding: 5px 8px; border-radius: 5px; color: #fff; background: #17384b; content: attr(data-tooltip); font-size: .7rem; opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(-3px); transition: opacity .16s, transform .16s; white-space: nowrap; }
+.profileButton:hover::after, .profileButton:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.menuToggle { display: none; }
+.userIcon svg { display: block; width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.profilePanel { position: absolute; top: 100%; right: 0; z-index: 10; width: min(310px, calc(100vw - 32px)); overflow: hidden; border: 1px solid #dce7ec; border-radius: 12px; background: #fff; box-shadow: 0 18px 42px rgba(23,56,75,.2); opacity: 0; pointer-events: none; transform: translateY(0); transition: opacity .16s ease, transform .16s ease; }
+.profileArea:hover .profilePanel, .profileArea:focus-within .profilePanel, .profilePanelOpen { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.profileHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 18px; background: #f7fbfc; }
+.profileAvatar { display: grid; width: 58px; height: 36px; flex: 0 0 58px; place-items: center; overflow: hidden; background: transparent; }
+.profileAvatar img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.profileHeading div { display: grid; min-width: 0; gap: 4px; }
+.profileHeading strong { overflow: hidden; color: #24485b; font-size: .86rem; text-overflow: ellipsis; white-space: nowrap; }
+.profileHeading small { color: var(--color-primary); font-size: .7rem; font-weight: 700; }
+.partnerDetails { display: grid; gap: 12px; padding: 16px 18px 18px; }
+.partnerDetails div { display: grid; gap: 4px; }
+.partnerDetails span { color: #91a5ae; font-size: .67rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.partnerDetails strong { overflow: hidden; color: #536d7b; font-size: .8rem; text-overflow: ellipsis; white-space: nowrap; }
+.profileMenuItem, .profileChangeMode { width: 100%; padding: 13px 18px; border: 0; border-top: 1px solid #edf2f4; color: var(--color-primary); background: #fff; cursor: pointer; font-size: .8rem; font-weight: 800; text-align: left; }
+.profileMenuItem:hover, .profileChangeMode:hover { background: #f5fafc; }
+.profileLogout { width: 100%; padding: 13px 18px; border: 0; border-top: 1px solid #edf2f4; color: #c24141; background: #fff; cursor: pointer; font-size: .8rem; font-weight: 800; text-align: left; }
+.profileLogout:hover { background: #fff5f5; color: #a93232; }
+.notificationPanel { position: absolute; top: calc(100% + 13px); right: 0; z-index: 10; width: min(360px, calc(100vw - 32px)); overflow: hidden; border: 1px solid #dce7ec; border-radius: 12px; background: #fff; box-shadow: 0 18px 42px rgba(23,56,75,.2); }
+.notificationHeading { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 13px; border-bottom: 1px solid #e7eef1; color: #24485b; }
+.notificationHeading span { color: var(--color-primary); font-size: .72rem; font-weight: 700; }
+.notificationList { display: grid; }
+.notificationItem { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 16px; border: 0; border-bottom: 1px solid #edf2f4; color: #24485b; background: #fff; cursor: pointer; text-align: left; }
+.notificationItem:last-child { border-bottom: 0; }
+.notificationItem:hover { background: #f5fafc; }
+.notificationDot { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; background: var(--color-primary); }
+.notificationText { display: grid; flex: 1; gap: 4px; }
+.notificationText strong { font-size: .82rem; }
+.notificationText small { color: #8398a2; font-size: .7rem; }
+.notificationArrow { color: var(--color-primary); font-size: 1.35rem; }
+.modalBackdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; background: rgba(15,38,50,.52); }
+.modal { position: relative; width: min(100%, 480px); padding: 32px; border-radius: 16px; background: #fff; box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+.modalClose { position: absolute; top: 12px; right: 15px; border: 0; color: #78909b; background: transparent; cursor: pointer; font-size: 1.65rem; line-height: 1; }
+.modalEyebrow { margin-bottom: 9px; color: var(--color-primary); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.modal h2 { padding-right: 18px; color: #183c51; font-size: 1.35rem; }
+.modalDate { margin-top: 8px; color: #91a3ac; font-size: .75rem; }
+.modalDetail { margin-top: 22px; color: #5f7682; line-height: 1.6; }
+.modalAction { width: 100%; min-height: 44px; margin-top: 25px; border: 0; border-radius: 8px; color: #fff; background: var(--color-primary); cursor: pointer; font-weight: 800; }
+.exitButton { padding: 9px 13px; border: 1px solid rgba(255,255,255,.55); border-radius: 7px; color: #fff; background: transparent; cursor: pointer; font-size: .78rem; font-weight: 700; }
+.exitButton:hover { background: rgba(255,255,255,.12); }
+.logoutButton { padding: 9px 13px; border: 1px solid rgba(255,255,255,.35); border-radius: 7px; color: #fff; background: rgba(0,0,0,.12); cursor: pointer; font-size: .78rem; font-weight: 700; }
+.logoutButton:hover { background: rgba(0,0,0,.22); }
+.navigation { border-bottom: 1px solid #dce7ec; background: #fff; }
+.navigationContent { display: flex; align-items: stretch; gap: 4px; width: min(100%, 1380px); min-height: 54px; margin: 0 auto; padding: 0 28px; }
+.menuEntry, .group { display: flex; align-items: stretch; }
+.group { position: relative; gap: 2px; }
+.groupLabel { display: flex; align-items: center; height: 54px; padding: 0 14px; border-bottom: 3px solid transparent; color: #536d7b; cursor: pointer; font-size: .86rem; font-weight: 600; white-space: nowrap; }
+.groupLabel:hover, .groupLabel:focus-visible { color: var(--color-primary); background: #f5fafc; outline: none; }
+.groupLabel::after { width: 6px; height: 6px; margin-left: 9px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; content: ''; transform: rotate(45deg) translate(-1px, -1px); transition: transform .16s ease; }
+.group:hover .groupLabel::after, .group:focus-within .groupLabel::after { transform: rotate(225deg) translate(-1px, -1px); }
+.submenu { position: absolute; top: 100%; left: 8px; z-index: 15; display: grid; min-width: 190px; padding: 7px; border: 1px solid #dce7ec; border-radius: 0 0 10px 10px; background: #fff; box-shadow: 0 14px 28px rgba(23,56,75,.14); opacity: 0; pointer-events: none; transform: translateY(-5px); transition: opacity .16s ease, transform .16s ease; }
+.group:hover .submenu, .group:focus-within .submenu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.submenu .navItem { height: 42px; border: 0; border-radius: 6px; }
+.submenu .navItem:hover, .submenu .active { background: #f5fafc; }
+.navItem { display: flex; align-items: center; height: 54px; padding: 0 14px; border-bottom: 3px solid transparent; color: #536d7b; font-size: .86rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.navItem:hover { color: var(--color-primary); background: #f5fafc; }
+.active { border-bottom-color: var(--color-primary); color: var(--color-primary); font-weight: 800; }
+.body { width: min(100%, 1380px); min-height: calc(100vh - 132px); margin: 0 auto; }
+.main { min-width: 0; flex: 1; padding: 42px clamp(22px, 4vw, 58px); }
+@media (max-width: 760px) {
+  .headerContent { gap: 12px; min-height: 68px; padding: 9px 16px; }
+  .brand { width: 130px; height: 42px; }
+  .brand img { max-height: 42px; }
+  .headerInfo { display: none; }
+  .notificationArea { margin-left: auto; }
+  .notificationPanel { position: fixed; top: 68px; right: 16px; left: 16px; width: auto; max-width: none; }
+  .menuToggle { display: grid; width: 38px; height: 38px; flex: 0 0 38px; gap: 4px; place-content: center; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; background: rgba(255,255,255,.1); cursor: pointer; }
+  .menuToggle span { display: block; width: 17px; height: 2px; border-radius: 2px; background: #fff; }
+  .exitButton, .logoutButton { padding: 8px 9px; font-size: .7rem; }
+  .exitButton { margin-left: auto; }
+  .navigation { display: none; }
+  .navigationOpen { display: block; }
+  .navigationContent { display: grid; gap: 2px; min-height: 0; padding: 10px 16px; }
+  .group, .menuEntry { display: block; }
+  .groupLabel { height: 42px; padding: 0 10px; font-size: .78rem; }
+  .submenu { position: static; display: grid; min-width: 0; padding: 0 0 4px 12px; border: 0; border-radius: 0; box-shadow: none; opacity: 1; pointer-events: auto; transform: none; }
+  .submenu .navItem, .navItem { min-height: 42px; height: 42px; padding: 0 10px; font-size: .76rem; }
+  .main { padding: 28px 18px; }
+}

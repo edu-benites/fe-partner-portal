@@ -1,0 +1,15 @@
+.trigger { display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px; border: 1px solid #cbdbe2; border-radius: 8px; color: #536d7b; background: #fff; cursor: pointer; font-size: .76rem; font-weight: 800; transition: border-color .16s, color .16s, box-shadow .16s; }
+.trigger:hover { border-color: var(--color-primary); color: var(--color-primary); box-shadow: 0 5px 14px rgba(29, 91, 119, .1); }
+.trigger svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.backdrop { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 20px; background: rgba(15,38,50,.58); }
+.modal { position: relative; width: min(100%, 650px); max-height: min(90vh, 760px); overflow: auto; padding: 32px; border-radius: 16px; background: #fff; box-shadow: 0 24px 70px rgba(0,0,0,.24); }
+.close { position: absolute; top: 12px; right: 16px; border: 0; color: #78909b; background: transparent; cursor: pointer; font-size: 1.7rem; line-height: 1; }
+.eyebrow { margin-bottom: 8px; color: var(--color-primary); font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.modal h2 { padding-right: 25px; color: #183c51; font-size: 1.35rem; }
+.description { margin-top: 10px; color: #718691; line-height: 1.5; }
+.steps { display: grid; gap: 8px; margin: 20px 0; padding-left: 20px; color: #536d7b; font-size: .82rem; line-height: 1.4; }
+.codeHeader { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 7px; color: #24485b; font-size: .78rem; }
+.codeHeader button { padding: 7px 10px; border: 0; border-radius: 6px; color: #fff; background: var(--color-primary); cursor: pointer; font-size: .72rem; font-weight: 800; }
+.code { overflow: auto; margin: 0; padding: 16px; border-radius: 9px; color: #d9f1fa; background: #17384b; font-size: .72rem; line-height: 1.55; white-space: pre-wrap; }
+.note { margin-top: 16px; color: #91a3ac; font-size: .72rem; line-height: 1.5; }
+@media (max-width: 520px) { .trigger span { display: none; } .trigger { padding: 9px; } .modal { padding: 26px 20px; } }
